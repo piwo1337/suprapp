@@ -1,0 +1,30 @@
+<nav id="navbar" class="navbar navbar-toggleable-sm fixed-top" data-spy="affix">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon">&#9776;</span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarToggler">
+    <%= link_to (fa_icon 'space-shuttle', text: "SMARTMACHiNES") , "#pagetop" , class: 'navbar-brand d-flex mx-auto w-50 page-scroll' %>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to 'Home', '#pagetop' , class: "nav-link page-scroll" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'News', '#news', class: 'nav-link page-scroll' %>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          About
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <%= link_to 'Why Us!', '#aboutWhy', class: 'dropdown-item page-scroll' %>
+          <%= link_to 'History', '#aboutHistory', class: 'dropdown-item page-scroll' %>
+        </div>
+      <li class="nav-item">
+        <%= link_to 'Products', '#products', class: 'nav-link page-scroll', method: :get %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Contact', '#contact', class: 'nav-link page-scroll' %>
+      </li>
+    </ul>
+  </div>
+</nav>

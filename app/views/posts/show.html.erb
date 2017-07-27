@@ -1,0 +1,18 @@
+<section id="showposts">
+  <header class="post-header">
+  <div class="col-md-8 offset-2 bg-white">
+    <h1 class="text-center post-h1"><%= @post.title %></h1>
+      <div class="post-image">
+        <%= image_tag @post.image %>
+      </div>
+      <p class="text-center post-h2"><%= @post.body %></p>
+    </div>
+
+    <div class="container">
+      <div class="col-md-6 offset-2">
+        <p id="notice"><%= notice %></p>
+        <%= link_to 'Back', root_path, class: 'btn btn-outline-warning' %>
+      </div>
+    </div>
+  </header>
+</section>

@@ -1,0 +1,238 @@
+
+<%= render :partial => "layouts/header" %>
+<% content_for :head do %>
+  <meta name="turbolinks-cache-control" content="no-cache">
+<% end %>
+
+<section id="news">
+  <div class="container-fluid bg-grey">
+    <h2 class="text-center">News</h2>
+  <hr>
+    <div class="card-deck justify-content-center">
+      <% @posts.each do |post| %>
+        <div class="card">
+      <%= image_tag post.image, size: '235x180', class: 'card-img-top' %>
+      <div class="card-block">
+        <h4 class="card-title"><%= post.title %></h4>
+        <p class="card-text"><%= truncate(post.body, length: 100) %></p>
+        <%= link_to("Read More", post , class: 'btn btn-outline-warning') %>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated <%= time_ago_in_words(post.updated_at) %></small>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <%= will_paginate(@posts, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer,
+  class: 'd-flex justify-content-center') %>
+</section>
+
+<section id="about">
+  <article id="aboutWhy">
+    <h2 class="text-center">Why SMARTMACHiNES</h2>
+    <hr>
+    <div class="container-fluid">
+      <div class="col-12 planArticle plug">
+        <h3>Event Title</h3>
+        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam nesciunt quas officiis obcaecati adipisci, eveniet quasi, totam sed at voluptatibus rerum debitis. Facere blanditiis, repellendus dignissimos, deserunt cum distinctio eveniet.</p>
+      </div>
+      <div class="col-12 exeArticle plug1">
+        <h3>Event Title</h3>
+        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam nesciunt quas officiis obcaecati adipisci, eveniet quasi, totam sed at voluptatibus rerum debitis. Facere blanditiis, repellendus dignissimos, deserunt cum distinctio eveniet.</p>
+      </div>
+      <div class="col-12 testArticle plug2">
+        <h3>Event Title</h3>
+        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam nesciunt quas officiis obcaecati adipisci, eveniet quasi, totam sed at voluptatibus rerum debitis. Facere blanditiis, repellendus dignissimos, deserunt cum distinctio eveniet.</p>
+      </div>
+    </div>
+  </article>
+
+  <article id="aboutHistory">
+    <h2 class="text-center">History of SMARTMACHiNES</h2>
+    <hr>
+    <div class="container-fluid ">
+      <ul class="timeline">
+        <!-- Item 1 -->
+        <li>
+          <div class="direction-r">
+            <div class="flag-wrapper">
+              <span class="flag">Event Title</span>
+              <span class="time-wrapper"><span class="time">2010 - 2012</span></span>
+            </div>
+            <div class="desc">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero autem nihil a labore. Quas, nihil culpa quasi labore, aut dolorum dolor quia totam, quidem ratione nam accusamus placeat laudantium dolore.
+            </div>
+          </div>
+        </li>
+        <!-- Item 2 -->
+        <li>
+          <div class="direction-l">
+            <div class="flag-wrapper">
+              <span class="flag">Event Title</span>
+              <span class="time-wrapper"><span class="time">2012 - 2015</span></span>
+            </div>
+            <div class="desc">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero autem nihil a labore. Quas, nihil culpa quasi labore, aut dolorum dolor quia totam, quidem ratione nam accusamus placeat laudantium dolore.
+            </div>
+          </div>
+        </li>
+        <!-- Item 3 -->
+        <li>
+          <div class="direction-r">
+            <div class="flag-wrapper">
+              <span class="flag">Event Title</span>
+              <span class="time-wrapper"><span class="time">2015</span></span>
+            </div>
+            <div class="desc">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero autem nihil a labore. Quas, nihil culpa quasi labore, aut dolorum dolor quia totam, quidem ratione nam accusamus placeat laudantium dolore.
+            </div>
+          </div>
+        </li>
+        <!-- Item 4 -->
+        <li>
+          <div class="direction-l">
+            <div class="flag-wrapper">
+              <span class="flag">Event Title</span>
+              <span class="time-wrapper"><span class="time">2015 - 2017</span></span>
+            </div>
+            <div class="desc">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero autem nihil a labore. Quas, nihil culpa quasi labore, aut dolorum dolor quia totam, quidem ratione nam accusamus placeat laudantium dolore.
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<section id="products">
+  <h2 class="text-center">Products</h2>
+  <hr>
+
+  <div class="container">
+    <div class="controls text-center clearfix">
+      <button type="button" class="filter btn btn-outline-warning product-btn" data-filter="all">All</button>
+      <button type="button" class="filter btn btn-outline-warning product-btn" data-filter=".category-1">Category A</button>
+      <button type="button" class="filter btn btn-outline-warning product-btn" data-filter=".category-2">Category B</button>
+    </div>
+
+    <div id="productList">
+      <div class="mix category-1" data-order="1" data-cat="category-1">
+        <div class="wrapper">
+          <%= image_tag("web/1.jpg", alt: "") %>
+          <div class="label">
+            <div class="label-text">
+              <a class="text-title">Event Title</a>
+                <span class="text-category">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+            </div>
+            <div class="label-bg"> </div>
+          </div>
+        </div>
+      </div>
+      <div class="mix category-2" data-order="9" data-cat="category-2">
+        <div class="wrapper">
+          <%= image_tag("app/2.jpg", alt: "") %>
+          <div class="label">
+            <div class="label-text">
+              <a class="text-title">Event Title</a>
+                <span class="text-category">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+            </div>
+            <div class="label-bg"> </div>
+          </div>
+        </div>
+      </div>
+      <div class="mix category-1" data-order="2" data-cat="category-1">
+        <div class="wrapper">
+          <%= image_tag("web/2.jpg", alt: "") %>
+          <div class="label">
+            <div class="label-text">
+              <a class="text-title">Event Title</a>
+                <span class="text-category">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+            </div>
+            <div class="label-bg"> </div>
+          </div>
+        </div>
+      </div>
+      <div class="mix category-2" data-order="4" data-cat="category-2">
+       <div class="wrapper">
+         <%= image_tag("app/3.jpg", alt: "") %>
+         <div class="label">
+            <div class="label-text">
+              <a class="text-title">Event Title</a>
+                <span class="text-category">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+            </div>
+            <div class="label-bg"> </div>
+          </div>
+        </div>
+      </div>
+      <div class="mix category-1" data-order="3" data-cat="category-1">
+        <div class="wrapper">
+          <%= image_tag("web/3.jpg", alt: "") %>
+          <div class="label">
+            <div class="label-text">
+              <a class="text-title">Event Title</a>
+                <span class="text-category">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+            </div>
+            <div class="label-bg"> </div>
+          </div>
+        </div>
+      </div>
+      <div class="mix category-2" data-order="8" data-cat="category-2">
+        <div class="wrapper">
+          <%= image_tag("app/1.jpg", alt: "") %>
+          <div class="label">
+            <div class="label-text">
+              <a class="text-title">Event Title</a>
+                <span class="text-category">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+            </div>
+            <div class="label-bg"> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container-fluid bg-grey" >
+    <h2 class="text-center">Contact</h2>
+    <hr>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="well">
+            <%= form_for "/contacts" do |f| %>
+              <div class="form-group">
+                <%= f.label :name %>
+                <%= f.text_field :name, class: 'form-control' %>
+              </div>
+              <div class="form-group">
+                <%= f.label :email %>
+                <%= f.text_field :email, class: 'form-control' %>
+              </div>
+              <div class="form-group">
+                <%= f.label :comments %>
+                <%= f.text_area :comments, class: 'form-control' %>
+              </div>
+              <%= f.submit 'Submit', class: 'btn btn-outline-warning' %>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <ul class="infoText">
+          <li>
+            <i class="fa fa-map-marker"></i>
+            SMARTMACHiNES<br>Random Street Name<br>Maribor, SI
+          </li>
+          <li>
+            <i class="fa fa-phone"></i> +386 123456789
+          </li>
+          <li>
+          <i class="fa fa-envelope-open-o"></i> example@example.com
+          </li>
+         </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
