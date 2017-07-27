@@ -84,7 +84,7 @@ a.nav-link.active{
 
 /* HEADER */
 .img-header {
-  background: url('header.jpg') no-repeat center center scroll;
+  background: image-url('header.jpg') no-repeat center center scroll;
   min-height: 100vh;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -263,7 +263,7 @@ a.nav-link.active{
   }
 
   .plug{
-    background: url(test1.jpg) 0px 150px, url(test1.jpg) 0px -225px, #fff;
+    background: image-url('test1.jpg') 0px 150px, image-url('test1.jpg') 0px -225px, #fff;
     background-repeat: no-repeat;
     -webkit-transition: background-position 0.3s ease;
     -moz-transition: background-position 0.3s ease;
@@ -273,7 +273,7 @@ a.nav-link.active{
   }
 
   .plug:hover {
-    background: url(test1.jpg) 0px 250px, url(test1.jpg) 0px -325px, #fff;
+    background: image-url('test1.jpg') 0px 250px, image-url('test1.jpg') 0px -325px, #fff;
     background-repeat: no-repeat;
   }
 
@@ -282,7 +282,7 @@ a.nav-link.active{
   }
 
    .plug1{
-    background: url(test2.jpg) 0px 150px, url(test2.jpg) 0px -225px, #fff;
+    background: image-url('test2.jpg') 0px 150px, image-url('test2.jpg') 0px -225px, #fff;
     background-repeat: no-repeat;
     -webkit-transition: background-position 0.3s ease;
     -moz-transition: background-position 0.3s ease;
@@ -292,7 +292,7 @@ a.nav-link.active{
   }
 
   .plug1:hover {
-    background: url(test2.jpg) 0px 250px, url(test2.jpg) 0px -325px, #fff;
+    background: image-url('test2.jpg') 0px 250px, image-url('test2.jpg') 0px -325px, #fff;
     background-repeat: no-repeat;
   }
 
@@ -301,7 +301,7 @@ a.nav-link.active{
   }
 
   .plug2{
-    background: url(test3.jpg) 0px 150px, url(test3.jpg) 0px -225px, #fff;
+    background: image-url('test3.jpg') 0px 150px, image-url('test3.jpg') 0px -225px, #fff;
     background-repeat: no-repeat;
     -webkit-transition: background-position 0.3s ease;
     -moz-transition: background-position 0.3s ease;
@@ -311,7 +311,7 @@ a.nav-link.active{
   }
 
   .plug2:hover {
-    background: url(test3.jpg) 0px 250px, url(test3.jpg) 0px -325px, #fff;
+    background: image-url('test3.jpg') 0px 250px, image-url('test3.jpg') 0px -325px, #fff;
     background-repeat: no-repeat;
   }
 
@@ -855,7 +855,7 @@ footer {
 /* POSTS */
 #showposts{
   .post-header {
-    background: url('header.jpg') no-repeat center center scroll;
+    background: image-url('header.jpg') no-repeat center center scroll;
     min-height: 100vh;
     -webkit-background-size: cover;
     -moz-background-size: cover;
